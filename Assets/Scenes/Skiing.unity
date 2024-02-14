@@ -397,6 +397,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f97bb03fd2b5694b89ce0577fbf512d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 1313915962}
+  verticalOffset: {x: 0, y: 0, z: 0}
+  smoothness: 0.5
 --- !u!1 &458410535
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,7 +631,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &998181030
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1103,7 +1106,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!60 &1313915965
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1419,7 +1422,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1743108313
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -18,13 +18,18 @@ namespace Code
             //move left
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                transform.position += new Vector3(-0.1f, 0, 0);
+                transform.position += new Vector3(-0.01f, 0, 0);
             }
             
             //move right
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                transform.position += new Vector3(0.1f, 0, 0);
+                transform.position += new Vector3(0.01f, 0, 0);
+            }
+            
+            //speed up (will change later)
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
             }
         }
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +8,34 @@ namespace Code{
     {
         //Outlet
         public Transform target;
-        public float verticalOffset;
+        
+        //Configuration
+        public Vector3 verticalOffset;
+        public float smoothness;
+        
+        //State Tracking
+        Vector3 _velocity;
+
+        private void Start()
+        {
+            if (target)
+            {
+                verticalOffset = transform.position - target.position;
+
+            }
+        }
 
         void Update()
         {
             if (target)
             {
-                transform.position += new Vector3(0, verticalOffset, 0);
+                Vector3 targetPosition = target.position + verticalOffset;
+                targetPosition.x = transform.position.x;
+                transform.position = Vector3.SmoothDamp(
+                    transform.position,
+                    targetPosition,
+                    ref _velocity,
+                    smoothness);
             }
         }
 
