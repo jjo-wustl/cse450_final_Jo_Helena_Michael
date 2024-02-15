@@ -1,15 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace Code
 {
     public class SkiControls : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        public static SkiControls instance;
 
+        public int restartCounter;
+        public TMP_Text restartUI;
+       
+        private void Awake()
+        {
+            instance = this;
+          
+        }
+        private void Start()
+        {
+            restartCounter = PlayerPrefs.GetInt("restartCounter");
         }
 
         // Update is called once per frame
@@ -31,6 +41,8 @@ namespace Code
             if (Input.GetKey(KeyCode.DownArrow))
             {
             }
+
+            restartUI.text = restartCounter.ToString();
         }
     }
 }
