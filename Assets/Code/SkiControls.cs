@@ -7,19 +7,12 @@ namespace Code
 {
     public class SkiControls : MonoBehaviour
     {
-        public static SkiControls instance;
-
-        public int restartCounter;
-        public TMP_Text restartUI;
+        public TMP_Text collisionUI;
+        public int collisionsLeft;
        
-        private void Awake()
-        {
-            instance = this;
-          
-        }
         private void Start()
         {
-            restartCounter = PlayerPrefs.GetInt("restartCounter");
+            collisionsLeft = 5;
         }
 
         // Update is called once per frame
@@ -42,7 +35,7 @@ namespace Code
             {
             }
 
-            restartUI.text = restartCounter.ToString();
+            collisionUI.text = "Collisions Left: " + collisionsLeft.ToString();
         }
     }
 }
