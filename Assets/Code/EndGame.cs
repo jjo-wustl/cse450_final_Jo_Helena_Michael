@@ -8,7 +8,11 @@ public class EndGame : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D other)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (other.gameObject.GetComponent<SkiControls>())
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            
     }
 }
 }
