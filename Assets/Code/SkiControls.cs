@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 namespace Code
 {
@@ -9,10 +10,13 @@ namespace Code
     {
         public TMP_Text collisionUI;
         public int collisionsLeft;
-       
+        private Vector3 velocity = Vector3.zero;
+        public float smoothTime = 3f;
+
         private void Start()
         {
             collisionsLeft = 5;
+
         }
 
         // Update is called once per frame
@@ -21,13 +25,20 @@ namespace Code
             //move left
             if (Input.GetKey(KeyCode.LeftArrow))
             {
+                transform.eulerAngles = (Vector3.forward * (Mathf.Atan2(0.1f,0.5f) * Mathf.Rad2Deg - 90))/3f;
                 transform.position += new Vector3(-0.01f, 0, 0);
             }
             
             //move right
-            if (Input.GetKey(KeyCode.RightArrow))
+            else if (Input.GetKey(KeyCode.RightArrow))
             {
+                transform.eulerAngles = (Vector3.forward * (Mathf.Atan2(0.1f, 0.5f) * Mathf.Rad2Deg + 90))/3f;
                 transform.position += new Vector3(0.01f, 0, 0);
+            }
+
+            else
+            {
+                transform.eulerAngles = (Vector3.forward);
             }
             
             //speed up (will change later)
@@ -37,5 +48,6 @@ namespace Code
 
             collisionUI.text = "Collisions Left: " + collisionsLeft.ToString();
         }
+  
     }
 }
