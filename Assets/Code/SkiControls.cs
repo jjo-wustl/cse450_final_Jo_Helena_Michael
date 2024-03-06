@@ -12,6 +12,7 @@ namespace Code
         public int collisionsLeft;
         private Vector3 velocity = Vector3.zero;
         public float smoothTime = 3f;
+        public float vel_power = 0;
 
         private void Start()
         {
@@ -22,11 +23,13 @@ namespace Code
         // Update is called once per frame
         void Update()
         {
+            transform.position += new Vector3(0, vel_power, 0);
+            print(vel_power);
             //move left
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 transform.eulerAngles = (Vector3.forward * (Mathf.Atan2(0.1f,0.5f) * Mathf.Rad2Deg - 90))/3f;
-                transform.position += new Vector3(-0.01f, 0, 0);
+                transform.position += new Vector3(-0.01f,0, 0);
             }
             
             //move right
