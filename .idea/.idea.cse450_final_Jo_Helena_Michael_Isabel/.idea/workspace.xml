@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a028644-055e-4f40-9277-5f6876fa2638" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Code/GameTimer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/GameTimer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Timer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Timer.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.cse450_final_Jo_Helena_Michael_Isabel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.cse450_final_Jo_Helena_Michael_Isabel/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Skiing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Skiing.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +19,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Code/GameTimer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Code/Timer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -27,7 +36,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "timer",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -37,9 +46,9 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\mcosu\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\mcosu\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\mcosu\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\Michael\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Michael\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\Michael\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -91,6 +100,10 @@
       <updated>1707339542312</updated>
       <workItem from="1707339546142" duration="1355000" />
       <workItem from="1707507118742" duration="769000" />
+      <workItem from="1709332136865" duration="1434000" />
+      <workItem from="1709425029542" duration="5015000" />
+      <workItem from="1709495286450" duration="1799000" />
+      <workItem from="1709758175783" duration="5390000" />
     </task>
     <servers />
   </component>
