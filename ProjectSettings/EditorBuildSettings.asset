@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Skiing.unity
     guid: e0a8e8a0ea1df09429424bcbcdb2f995
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: bce8ce5f311dc294cadb5cfe51bbe9db
   m_configObjects: {}

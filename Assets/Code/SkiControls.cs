@@ -16,7 +16,7 @@ namespace Code
 
         private void Start()
         {
-            collisionsLeft = 5;
+            collisionsLeft = 3;
 
         }
 
