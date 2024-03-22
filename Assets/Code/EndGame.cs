@@ -10,6 +10,11 @@ public class EndGame : MonoBehaviour
     {
             if (other.gameObject.GetComponent<SkiControls>())
             {
+                Timer timer = FindObjectOfType<Timer>();
+                if (timer)
+                {
+                    timer.SaveBestTime();
+                }
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
             

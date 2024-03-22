@@ -16,6 +16,11 @@ namespace Code
                 skiController.collisionsLeft--;
                 if(skiController.collisionsLeft == 0)
                 {
+                    Timer timer = FindObjectOfType<Timer>();
+                    if (timer)
+                    {
+                        timer.SaveBestTime();
+                    }
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 }
             }
