@@ -2071,6 +2071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e638cbb23005e14b84fa73962f314f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 0}
 --- !u!1001 &1034455746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3430,7 +3431,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.12
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -7952,6 +7953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e638cbb23005e14b84fa73962f314f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 6420108865765674317, guid: 863e6d098c0ad43409035482da0572d4, type: 3}
 --- !u!114 &1682186503 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2219562109536345844, guid: 815da05dc357eaa40b387a1d2b728ca3, type: 3}
@@ -8151,6 +8153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e638cbb23005e14b84fa73962f314f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 0}
 --- !u!1 &1861812766
 GameObject:
   m_ObjectHideFlags: 0
