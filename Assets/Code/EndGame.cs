@@ -7,16 +7,8 @@ using UnityEngine.SceneManagement;
 namespace Code { 
     public class EndGame : MonoBehaviour
     {
-        private int[] sceneIndices;
-        private static int sceneCount;
+        [SerializeField] public int sceneCount;
 
-        private void Awake()
-        {
-            sceneIndices = new int[2];
-            sceneIndices[0] = 0;
-            sceneIndices[1] = 1;
-            sceneCount = 0;
-        }
         void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.GetComponent<SkiControls>())
@@ -25,14 +17,13 @@ namespace Code {
                 if (timer)
                 {
                     timer.SaveBestTime();
+                    print("called save best time");
                 }
 
-                // print("Scene index: " + SceneManager.GetActiveScene().buildIndex);
-               //  int scene = sceneCount % 2;
-               // sceneCount++;
-                // SceneManager.LoadScene(sceneBuildIndex: sceneIndices[sceneCount]);
+                int scene = (SceneManager.GetActiveScene().buildIndex + 1) % 2;
+                //print("scene number attempt: " + scene);
+                SceneManager.LoadScene(scene);
 
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
             
         }

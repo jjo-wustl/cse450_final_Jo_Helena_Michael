@@ -26,6 +26,7 @@ namespace Code
 
                 if (skiController.collisionsLeft == 0)
                 {
+                    // I think we shouldn't save best time is the user didn't make it to finish line
                     Timer timer = FindObjectOfType<Timer>();
                     if (timer)
                     {

@@ -40,6 +40,7 @@ namespace Code
             else
             {
                 PlayerPrefs.SetInt("BestTime", 10000);
+                PlayerPrefs.Save(); //added here
             }
             timerIsRunning = true;
             
@@ -80,6 +81,8 @@ namespace Code
 
         public void SaveBestTime()
         {
+            print("elapsed: " + elapsedTime);
+            print("best: " + bestTime);
             if (elapsedTime < bestTime)
             {
                 bestTime = Mathf.FloorToInt(elapsedTime);
