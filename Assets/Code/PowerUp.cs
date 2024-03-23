@@ -8,11 +8,10 @@ namespace Code
     {
         void OnTriggerEnter2D(Collider2D other)
         {
-            print("here");
             SkiControls skiController = other.gameObject.GetComponent<SkiControls>();
             if (skiController)
             {
-                skiController.vel_power -= 0.01f;
+                skiController.power_up = true;
             }
         }
     }

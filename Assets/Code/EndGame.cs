@@ -21,11 +21,18 @@ namespace Code {
         {
             if (other.gameObject.GetComponent<SkiControls>())
             {
-                print("Scene index: " + SceneManager.GetActiveScene().buildIndex);
-                int scene = sceneCount % 2;
-                sceneCount++;
-                SceneManager.LoadScene(sceneBuildIndex: sceneIndices[sceneCount]);
-                
+                Timer timer = FindObjectOfType<Timer>();
+                if (timer)
+                {
+                    timer.SaveBestTime();
+                }
+
+                // print("Scene index: " + SceneManager.GetActiveScene().buildIndex);
+               //  int scene = sceneCount % 2;
+               // sceneCount++;
+                // SceneManager.LoadScene(sceneBuildIndex: sceneIndices[sceneCount]);
+
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
             
         }
