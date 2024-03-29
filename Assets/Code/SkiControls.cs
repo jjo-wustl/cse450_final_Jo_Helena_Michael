@@ -12,19 +12,29 @@ namespace Code
         public int collisionsLeft;
         private Vector3 velocity = Vector3.zero;
         public float smoothTime = 3f;
-        public float vel_power = 0;
+        public bool power_up = false;
+        public float timeElapsed;
 
         private void Start()
         {
-            collisionsLeft = 5;
+            collisionsLeft = 3;
 
         }
 
         // Update is called once per frame
         void Update()
         {
-            transform.position += new Vector3(0, vel_power, 0);
-            print(vel_power);
+            if (power_up)
+            {
+                transform.position += new Vector3(0, -0.01f, 0);
+                timeElapsed += Time.deltaTime;
+                if(timeElapsed > 1f)
+                {
+                    power_up = false;
+                    timeElapsed = 0;
+                }
+            }
+            
             //move left
             if (Input.GetKey(KeyCode.LeftArrow))
             {
@@ -41,7 +51,7 @@ namespace Code
 
             else
             {
-                transform.eulerAngles = (Vector3.forward);
+                transform.eulerAngles = Vector3.forward;
             }
             
             //speed up (will change later)
