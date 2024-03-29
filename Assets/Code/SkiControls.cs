@@ -51,7 +51,7 @@ namespace Code
 
             else
             {
-                transform.eulerAngles = (Vector3.forward);
+                transform.eulerAngles = Vector3.forward;
             }
             
             //speed up (will change later)

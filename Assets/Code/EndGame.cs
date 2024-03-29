@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 namespace Code { 
     public class EndGame : MonoBehaviour
     {
-        [SerializeField] public int sceneCount;
+        //[SerializeField] public int sceneCount;
+        private const int SCENE_COUNT = 3;
 
         void OnCollisionEnter2D(Collision2D other)
         {
@@ -20,7 +21,7 @@ namespace Code {
                     print("called save best time");
                 }
 
-                int scene = (SceneManager.GetActiveScene().buildIndex + 1) % 2;
+                int scene = (SceneManager.GetActiveScene().buildIndex + 1) % SCENE_COUNT;
                 //print("scene number attempt: " + scene);
                 SceneManager.LoadScene(scene);
 
