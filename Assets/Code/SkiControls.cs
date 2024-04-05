@@ -8,15 +8,19 @@ namespace Code
 {
     public class SkiControls : MonoBehaviour
     {
+        public static SkiControls instance;
+
         public TMP_Text collisionUI;
         public int collisionsLeft;
         private Vector3 velocity = Vector3.zero;
         public float smoothTime = 3f;
         public bool power_up = false;
         public float timeElapsed;
+        public bool isPaused;
 
         private void Start()
         {
+            instance = this;
             collisionsLeft = 3;
 
         }
@@ -24,6 +28,16 @@ namespace Code
         // Update is called once per frame
         void Update()
         {
+            if (isPaused)
+            {
+                return;
+            }
+            // check esc key for menu
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                MenuController.instance.ShowMainMenu();
+            }
+
             if (power_up)
             {
                 transform.position += new Vector3(0, -0.01f, 0);
