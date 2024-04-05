@@ -71,6 +71,9 @@ namespace Code
             //speed up (will change later)
             if (Input.GetKey(KeyCode.DownArrow))
             {
+                float speedIncrease = 0.009f;
+                Vector3 direction = -transform.up;
+                transform.position += direction * speedIncrease;
             }
 
             collisionUI.text = "Collisions Left: " + collisionsLeft.ToString();
