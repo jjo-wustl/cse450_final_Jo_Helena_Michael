@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0a028644-055e-4f40-9277-5f6876fa2638" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.cse450_final_Jo_Helena_Michael_Isabel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.cse450_final_Jo_Helena_Michael_Isabel/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Timer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tile Palettes/Obstacles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Obstacles.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +104,7 @@
       <workItem from="1709758175783" duration="5390000" />
       <workItem from="1711066519392" duration="6389000" />
       <workItem from="1712333054507" duration="323000" />
+      <workItem from="1712513831393" duration="873000" />
     </task>
     <servers />
   </component>
