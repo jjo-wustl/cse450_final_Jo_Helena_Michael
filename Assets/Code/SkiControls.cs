@@ -12,7 +12,6 @@ namespace Code
 
         public TMP_Text collisionUI;
         public int collisionsLeft;
-        private Vector3 velocity = Vector3.zero;
         public float smoothTime = 3f;
         public bool power_up = false;
         public float timeElapsed;
@@ -78,6 +77,7 @@ namespace Code
 
             collisionUI.text = "Collisions Left: " + collisionsLeft.ToString();
         }
+        
   
     }
 }
