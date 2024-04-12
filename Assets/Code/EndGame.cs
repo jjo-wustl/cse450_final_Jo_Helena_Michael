@@ -8,7 +8,7 @@ namespace Code {
     public class EndGame : MonoBehaviour
     {
         //[SerializeField] public int sceneCount;
-        private const int SCENE_COUNT = 3;
+        private const int SCENE_COUNT = 4;
 
         void OnCollisionEnter2D(Collision2D other)
         {
