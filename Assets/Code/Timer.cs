@@ -68,7 +68,8 @@ namespace Code
             if (PlayerPrefs.HasKey(bestTimeKey))
             {
                 bestTime = PlayerPrefs.GetInt(bestTimeKey);
-                if (bestTime < 10000)
+                //print("best time on load: " + bestTime);
+                if (bestTime < 100 && bestTime > 0)
                 {
                     int minutes = bestTime / 60;
                     int seconds = bestTime % 60;
@@ -78,6 +79,10 @@ namespace Code
 
                     bestTimeDisplay[2].sprite = numberSprites[seconds / 10];
                     bestTimeDisplay[3].sprite = numberSprites[seconds % 10];
+                }else if (bestTime <= 0)
+                {
+                    PlayerPrefs.SetInt(bestTimeKey, 10000);
+                    PlayerPrefs.Save();
                 }
             }
             else
@@ -96,6 +101,13 @@ namespace Code
                 PlayerPrefs.SetInt(bestTimeKey, bestTime);
                 PlayerPrefs.Save();
             }
+        }
+
+        public void resetBestTime()
+        {
+            string bestTimeKey = GetBestTimeKey();
+            PlayerPrefs.SetInt(bestTimeKey, 10000);
+            PlayerPrefs.Save();
         }
         // External controls for the timer, if needed
         public void StartTimer()
