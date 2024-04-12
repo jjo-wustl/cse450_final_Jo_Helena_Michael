@@ -21,7 +21,11 @@ namespace Code
         {
             instance = this;
             collisionsLeft = 3;
-
+           // PlayerPrefs.DeleteAll();
+            if (!PlayerPrefs.HasKey("sceneReached"))
+            {
+                PlayerPrefs.SetInt("sceneReached", 0);
+            }
         }
 
         // Update is called once per frame

@@ -10695,6 +10695,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 654804102}
+  levelButtons:
+  - {fileID: 1827745451}
+  - {fileID: 1883985408}
+  - {fileID: 35203536}
+  - {fileID: 675350318}
 --- !u!114 &1804421910
 MonoBehaviour:
   m_ObjectHideFlags: 0

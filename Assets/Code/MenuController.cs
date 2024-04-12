@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class MenuController : MonoBehaviour
 
     // Outlets
     public GameObject mainMenu;
+    public Button[] levelButtons;
 
     private void Awake()
     {
@@ -23,6 +25,19 @@ public class MenuController : MonoBehaviour
         gameObject.SetActive(true);
         Time.timeScale = 0;
         SkiControls.instance.isPaused = true;
+
+        for(int i = 0; i < levelButtons.Length; i++)
+        {
+            if(i > PlayerPrefs.GetInt("sceneReached"))
+            {
+                levelButtons[i].interactable = false;
+
+            }
+            else
+            {
+                levelButtons[i].interactable=true;
+            }
+        }
     }
 
     public void Hide()
@@ -37,7 +52,7 @@ public class MenuController : MonoBehaviour
 
     public void SwitchLevel(int levelIndex)
     {
-        Hide();
-        SceneManager.LoadScene(levelIndex);
+            Hide();
+            SceneManager.LoadScene(levelIndex);
     }
 }

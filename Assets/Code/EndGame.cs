@@ -21,6 +21,11 @@ namespace Code {
                     print("called save best time");
                 }
 
+                if (PlayerPrefs.GetInt("sceneReached") < SCENE_COUNT - 1)
+                {
+                    PlayerPrefs.SetInt("sceneReached", PlayerPrefs.GetInt("sceneReached") + 1);
+                }
+
                 int scene = (SceneManager.GetActiveScene().buildIndex + 1) % SCENE_COUNT;
                 //print("scene number attempt: " + scene);
                 SceneManager.LoadScene(scene);
