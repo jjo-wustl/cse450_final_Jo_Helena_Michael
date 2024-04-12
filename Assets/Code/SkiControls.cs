@@ -53,14 +53,14 @@ namespace Code
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 transform.eulerAngles = (Vector3.forward * (Mathf.Atan2(0.1f,0.5f) * Mathf.Rad2Deg - 90))/3f;
-                transform.position += new Vector3(-0.01f,0, 0);
+                transform.position += Vector3.left * Time.fixedDeltaTime;
             }
             
             //move right
             else if (Input.GetKey(KeyCode.RightArrow))
             {
                 transform.eulerAngles = (Vector3.forward * (Mathf.Atan2(0.1f, 0.5f) * Mathf.Rad2Deg + 90))/3f;
-                transform.position += new Vector3(0.01f, 0, 0);
+                transform.position += Vector3.right * Time.fixedDeltaTime;
             }
 
             else
