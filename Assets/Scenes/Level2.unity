@@ -1671,7 +1671,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.12
+      scalar: 0.13
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -10072,7 +10072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e638cbb23005e14b84fa73962f314f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 6420108865765674317, guid: 863e6d098c0ad43409035482da0572d4, type: 3}
 --- !u!1001 &1725390589
 PrefabInstance:
   m_ObjectHideFlags: 0
