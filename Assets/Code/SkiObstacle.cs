@@ -13,9 +13,10 @@ namespace Code
         void OnCollisionEnter2D(Collision2D other)
         {
             SkiControls skiController = other.gameObject.GetComponent<SkiControls>();
-            if(skiController)
+            if (skiController)
             {
                 skiController.collisionsLeft--;
+
 
                 // Instantiate the explosion when the skier collides with an obstacle
                 if (explosionPrefab != null)
@@ -37,8 +38,9 @@ namespace Code
                 }
             }
         }
-       
+
+    } 
         
 }
-}
+
 
