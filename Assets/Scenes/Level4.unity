@@ -19357,11 +19357,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 310130005}
-  levelButtons:
-  - {fileID: 2075029895}
-  - {fileID: 121403802}
-  - {fileID: 330943590}
-  - {fileID: 261398377}
 --- !u!114 &1306209224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19664,6 +19659,7 @@ GameObject:
   - component: {fileID: 1416863721}
   - component: {fileID: 1416863720}
   - component: {fileID: 1416863719}
+  - component: {fileID: 1416863724}
   m_Layer: 8
   m_Name: Skiier
   m_TagString: Untagged
@@ -19945,6 +19941,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1416863724
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416863717}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0820e47682062a04ba0d23f241db41a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1493384271
 PrefabInstance:
   m_ObjectHideFlags: 0
