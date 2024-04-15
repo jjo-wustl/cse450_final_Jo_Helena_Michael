@@ -17,6 +17,8 @@ namespace Code
         public float timeElapsed;
         public bool isPaused;
 
+       // private float speed = 3f;
+
         private void Start()
         {
             instance = this;
@@ -43,7 +45,7 @@ namespace Code
 
             if (power_up)
             {
-                transform.position += new Vector3(0, -0.01f, 0);
+                transform.position += new Vector3(0, -0.2f, 0) * Time.deltaTime; //might need to adjust -0.01f
                 timeElapsed += Time.deltaTime;
                 if(timeElapsed > 1f)
                 {
@@ -56,19 +58,19 @@ namespace Code
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 transform.eulerAngles = (Vector3.forward * (Mathf.Atan2(0.1f,0.5f) * Mathf.Rad2Deg - 90))/3f;
-                transform.position += Vector3.left * Time.fixedDeltaTime;
+                transform.position += Vector3.left * Time.deltaTime* 3f;
             }
             
             //move right
             else if (Input.GetKey(KeyCode.RightArrow))
             {
                 transform.eulerAngles = (Vector3.forward * (Mathf.Atan2(0.1f, 0.5f) * Mathf.Rad2Deg + 90))/3f;
-                transform.position += Vector3.right * Time.fixedDeltaTime;
+                transform.position += Vector3.right * Time.deltaTime * 3f;
             }
 
             else
             {
-                transform.eulerAngles = Vector3.forward;
+                transform.eulerAngles = Vector3.forward * Time.deltaTime * 3f;
             }
             
             //speed up (will change later)
