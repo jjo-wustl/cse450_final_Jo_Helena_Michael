@@ -74,12 +74,12 @@ namespace Code
                 transform.eulerAngles = Vector3.forward * Time.deltaTime * speed;
             }
             
-            //speed up (will change later)
+            //speed up
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                float speedIncrease = 0.01f;
+                float speedIncrease = 1.5f; // half the power up increase
                 Vector3 direction = -transform.up;
-                transform.position += direction * speedIncrease;
+                transform.position += direction * speedIncrease * Time.deltaTime;
             }
 
             collisionUI.text = "Collisions Left: " + collisionsLeft.ToString();
