@@ -8,7 +8,7 @@ namespace Code {
     public class EndGame : MonoBehaviour
     {
         //[SerializeField] public int sceneCount;
-        private const int SCENE_COUNT = 3;
+        private const int SCENE_COUNT = 4;
 
         void OnCollisionEnter2D(Collision2D other)
         {
@@ -19,6 +19,11 @@ namespace Code {
                 {
                     timer.SaveBestTime();
                     print("called save best time");
+                }
+
+                if (PlayerPrefs.GetInt("sceneReached") < SCENE_COUNT - 1)
+                {
+                    PlayerPrefs.SetInt("sceneReached", PlayerPrefs.GetInt("sceneReached") + 1);
                 }
 
                 int scene = (SceneManager.GetActiveScene().buildIndex + 1) % SCENE_COUNT;

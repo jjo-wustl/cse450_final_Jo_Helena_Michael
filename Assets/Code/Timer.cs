@@ -15,36 +15,19 @@ namespace Code
         public bool timerIsRunning = false;
 
         int bestTime = 10000;
+        
+        //update the PlayerPrefs key for each level
+        private string GetBestTimeKey()
+        {
+            string levelName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+            return levelName + "_BestTime";
+        }
         void Start()
         {
-            Debug.Log(PlayerPrefs.HasKey("BestTime"));
-            if (PlayerPrefs.HasKey("BestTime"))
-            {
-                //if (PlayerPrefs.GetInt("BestTime") == 0)
-                //{
-                //    PlayerPrefs.SetInt("BestTime", bestTime);
-                //}
-                bestTime = PlayerPrefs.GetInt("BestTime");
-                if (bestTime < 10000)
-                {
-                    int minutes = bestTime / 60;
-                    int seconds = bestTime % 60;
-
-                    bestTimeDisplay[0].sprite = numberSprites[minutes / 10];
-                    bestTimeDisplay[1].sprite = numberSprites[minutes % 10];
-
-                    bestTimeDisplay[2].sprite = numberSprites[seconds / 10];
-                    bestTimeDisplay[3].sprite = numberSprites[seconds % 10];
-                }
-            }
-            else
-            {
-                PlayerPrefs.SetInt("BestTime", 10000);
-                PlayerPrefs.Save(); //added here
-            }
+            LoadBestTime();
             timerIsRunning = true;
-            
         }
+        
 
         void Update()
         {
@@ -78,17 +61,53 @@ namespace Code
                 Debug.LogError("Not enough digit displays assigned to show the time in MM:SS format.");
             }
         }
+        
+        private void LoadBestTime()
+        {
+            string bestTimeKey = GetBestTimeKey();
+            if (PlayerPrefs.HasKey(bestTimeKey))
+            {
+                bestTime = PlayerPrefs.GetInt(bestTimeKey);
+                //print("best time on load: " + bestTime);
+                if (bestTime < 100 && bestTime > 0)
+                {
+                    int minutes = bestTime / 60;
+                    int seconds = bestTime % 60;
+
+                    bestTimeDisplay[0].sprite = numberSprites[minutes / 10];
+                    bestTimeDisplay[1].sprite = numberSprites[minutes % 10];
+
+                    bestTimeDisplay[2].sprite = numberSprites[seconds / 10];
+                    bestTimeDisplay[3].sprite = numberSprites[seconds % 10];
+                }else if (bestTime <= 0)
+                {
+                    PlayerPrefs.SetInt(bestTimeKey, 10000);
+                    PlayerPrefs.Save();
+                }
+            }
+            else
+            {
+                PlayerPrefs.SetInt(bestTimeKey, 10000);
+                PlayerPrefs.Save();
+            }
+        }
 
         public void SaveBestTime()
         {
-            print("elapsed: " + elapsedTime);
-            print("best: " + bestTime);
+            string bestTimeKey = GetBestTimeKey();
             if (elapsedTime < bestTime)
             {
                 bestTime = Mathf.FloorToInt(elapsedTime);
-                PlayerPrefs.SetInt("BestTime", bestTime);
+                PlayerPrefs.SetInt(bestTimeKey, bestTime);
                 PlayerPrefs.Save();
             }
+        }
+
+        public void resetBestTime()
+        {
+            string bestTimeKey = GetBestTimeKey();
+            PlayerPrefs.SetInt(bestTimeKey, 10000);
+            PlayerPrefs.Save();
         }
         // External controls for the timer, if needed
         public void StartTimer()

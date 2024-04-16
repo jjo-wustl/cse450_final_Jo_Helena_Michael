@@ -13,14 +13,16 @@ namespace Code
         void OnCollisionEnter2D(Collision2D other)
         {
             SkiControls skiController = other.gameObject.GetComponent<SkiControls>();
-            if(skiController)
+            if (skiController)
             {
                 skiController.collisionsLeft--;
+
 
                 // Instantiate the explosion when the skier collides with an obstacle
                 if (explosionPrefab != null)
                 {
-                    Instantiate(explosionPrefab, other.contacts[0].point, Quaternion.identity);
+                    Instantiate(explosionPrefab, new Vector3(other.contacts[0].point.x, other.contacts[0].point.y, 0), Quaternion.identity);
+                    Debug.Log("Collision with obstacle detected");
                 }
 
 
@@ -36,8 +38,9 @@ namespace Code
                 }
             }
         }
-       
+
+    } 
         
 }
-}
+
 
