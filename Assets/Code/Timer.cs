@@ -40,21 +40,13 @@ namespace Code
 
         private void UpdateDisplay()
         {
-            int time = Mathf.FloorToInt(elapsedTime);
+            int time = Mathf.FloorToInt(elapsedTime); //time won't reach a minute so there's no need to calculate minutes
 
-            // Assuming you want to display time in MM:SS format and have 4 digitDisplays
-            int minutes = time / 60;
-            int seconds = time % 60;
-
-            if (digitDisplays.Length >= 4) // Ensure there's enough space for MM:SS format
+            if (digitDisplays.Length >= 2)
             {
-                // Update minutes display
-                digitDisplays[0].sprite = numberSprites[minutes / 10];
-                digitDisplays[1].sprite = numberSprites[minutes % 10];
-                
-                // Update seconds display
-                digitDisplays[2].sprite = numberSprites[seconds / 10]; 
-                digitDisplays[3].sprite = numberSprites[seconds % 10];
+                // Update time display
+                digitDisplays[0].sprite = numberSprites[time / 10];
+                digitDisplays[1].sprite = numberSprites[time % 10];
             }
             else
             {
@@ -69,16 +61,10 @@ namespace Code
             {
                 bestTime = PlayerPrefs.GetInt(bestTimeKey);
                 //print("best time on load: " + bestTime);
-                if (bestTime < 100 && bestTime > 0)
+                if (bestTime < 1000 && bestTime > 0)
                 {
-                    int minutes = bestTime / 60;
-                    int seconds = bestTime % 60;
-
-                    bestTimeDisplay[0].sprite = numberSprites[minutes / 10];
-                    bestTimeDisplay[1].sprite = numberSprites[minutes % 10];
-
-                    bestTimeDisplay[2].sprite = numberSprites[seconds / 10];
-                    bestTimeDisplay[3].sprite = numberSprites[seconds % 10];
+                    bestTimeDisplay[0].sprite = numberSprites[bestTime / 10];
+                    bestTimeDisplay[1].sprite = numberSprites[bestTime % 10];
                 }else if (bestTime <= 0)
                 {
                     PlayerPrefs.SetInt(bestTimeKey, 10000);
